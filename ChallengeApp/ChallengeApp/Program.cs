@@ -11,26 +11,26 @@ using System.ComponentModel.Design;
 /// ------------------------------
 /// (możesz dodać swoje)
 var name = "Ewa";
-var sex = "male";
-var age = 80;
+bool female = true;
+var age = 33;
 
-if (name == "Ewa" && sex == "female" && age == 33)
+if (name == "Ewa" && female && age == 33)
 {
     Console.WriteLine("Ewa, lat 33");
 }
-else if (sex == "female" && age < 30)
+else if (female && age < 30)
 {
     Console.WriteLine("Kobieta poniżej 30 lat");
 }
-else if (sex != "female" && age < 18)
+else if (!female && age < 18)
 {
     Console.WriteLine("Niepełnoletni mężczyzna");
 }
-else if (sex != "female" && age > 18 && age < 80)
+else if (!female && age > 18 && age < 80)
 {
     Console.WriteLine("Pełnoletni mężczyzna");
 }
-else if (sex != "female" && age >= 80)
+else if (!female && age >= 80)
 {
     Console.WriteLine("Bardzo pełnoletni mężczyzna");
 }
