@@ -1,36 +1,73 @@
 ﻿
-using System.ComponentModel.Design;
-/// Napisz w Program.cs kod, w którym
-/// - zadeklarujesz zmienną z imieniem
-/// - zadeklarujesz zmienną z płcią (dobierz zmienną)
-/// - zadeklarujesz zmienną z wiekiem
-/// - zweryfikujesz dane i wyświetlisz jeden z komunikatów
-/// (1): "Kobieta poniżej 30 lat"
-/// (2): "Ewa, lat 33"
-/// (3): "Niepełnoletni mężczyzna"
-/// ------------------------------
-/// (możesz dodać swoje)
-var name = "Ewa";
-bool female = true;
-var age = 33;
+using System.Reflection.Metadata;
+/// Przygotuj program, który policzy ile jakich cyfr
+/// występuje w podanej liczbie
+/// 
+/// Przykład:
+/// Wyniki dla liczby: 4566
+/// 0 => 0
+/// 1 => 0
+/// 2 => 0
+/// 3 => 0
+/// 4 => 1
+/// 5 => 1
+/// 6 => 2
+/// 7 => 0
+/// 8 => 0
+/// 9 => 0
+int number = 33111975;
+string numberAsString = number.ToString();
+char[] chars = numberAsString.ToArray();
+int[] result = new int[10];
 
-if (name == "Ewa" && female && age == 33)
+Console.WriteLine("Poniżej wynik dla liczby " + number);
+
+for (int i=0; i<10; i++)
 {
-    Console.WriteLine("Ewa, lat 33");
-}
-else if (female && age < 30)
-{
-    Console.WriteLine("Kobieta poniżej 30 lat");
-}
-else if (!female && age < 18)
-{
-    Console.WriteLine("Niepełnoletni mężczyzna");
-}
-else if (!female && age > 18 && age < 80)
-{
-    Console.WriteLine("Pełnoletni mężczyzna");
-}
-else if (!female && age >= 80)
-{
-    Console.WriteLine("Bardzo pełnoletni mężczyzna");
+    result[i] = 0;
+
+    foreach (char oneDigit in chars)
+    {
+        if (oneDigit == '0')
+        {
+            result[0]++;
+        }
+        else if (oneDigit == '1')
+        {
+            result[1]++;
+        }
+        else if (oneDigit == '2')
+        {
+            result[2]++;
+        }
+        else if (oneDigit == '3')
+        {
+            result[3]++;
+        }
+        else if (oneDigit == '4')
+        {
+            result[4]++;
+        }
+        else if (oneDigit == '5')
+        {
+            result[5]++;
+        }
+        else if (oneDigit == '6')
+        {
+            result[6]++;
+        }
+        else if (oneDigit == '7')
+        {
+            result[7]++;
+        }
+        else if (oneDigit == '8')
+        {
+            result[8]++;
+        }
+        else if (oneDigit == '9')
+        {
+            result[9]++;
+        }
+    }
+    Console.WriteLine(i + " => " + result[i]);
 }
