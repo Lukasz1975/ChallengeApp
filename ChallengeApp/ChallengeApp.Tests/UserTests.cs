@@ -6,9 +6,9 @@ namespace ChallengeApp.Tests
         public void WhenUserCollectPositivePoints_ShouldCorrectResult()
         {
             // arrange
-            var user1 = new User("Lukasz", "Paczus", 42);
-            var user2 = new User("Marian", "Boliboli", 82);
-            var user3 = new User("Anna", "Ciekawska", 18);
+            var user1 = new User(100258, "Paczus", 42);
+            var user2 = new User(100500, "Boliboli", 82);
+            var user3 = new User(100001, "Ciekawska", 18);
 
             user1.AddScore(7);
             user1.AddScore(1);
@@ -35,9 +35,9 @@ namespace ChallengeApp.Tests
         public void WhenUserCollectPositiveAndNegativePoints_ShouldCorrectResult()
         {
             // arrange
-            var user1 = new User("Lukasz", "Paczus", 42);
-            var user2 = new User("Marian", "Boliboli", 82);
-            var user3 = new User("Anna", "Ciekawska", 18);
+            var user1 = new User(100258, "Paczus", 42);
+            var user2 = new User(100500, "Boliboli", 82);
+            var user3 = new User(100001, "Ciekawska", 18);
 
             user1.AddScore(7);
             user1.AddScore(1);
@@ -64,9 +64,9 @@ namespace ChallengeApp.Tests
         public void WhenUserCollectNegativePoints_ShouldCorrectResult()
         {
             // arrange
-            var user1 = new User("Lukasz", "Paczus", 42);
-            var user2 = new User("Marian", "Boliboli", 82);
-            var user3 = new User("Anna", "Ciekawska", 18);
+            var user1 = new User(100258, "Paczus", 42);
+            var user2 = new User(100500, "Boliboli", 82);
+            var user3 = new User(100001, "Ciekawska", 18);
 
             user1.AddScore(-7);
             user1.AddScore(-1);

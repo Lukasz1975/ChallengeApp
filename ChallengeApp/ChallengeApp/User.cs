@@ -4,13 +4,18 @@
     {
         private List<int> score = new List<int>();
 
-        public User(string name, string surname, int age)
+        public User(int login)
         {
-            this.Name = name;
+            this.Login = login;
+        }
+
+        public User(int login, string surname, int age)
+        {
+            this.Login = login;
             this.Surname = surname;
             this.Age = age;
         }
-        public string Name { get; private set; }
+        public int Login { get; private set; }
 
         public string Surname { get; private set; }
 
