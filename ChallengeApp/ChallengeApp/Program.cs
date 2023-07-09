@@ -1,73 +1,44 @@
-﻿
-using System.Reflection.Metadata;
-/// Przygotuj program, który policzy ile jakich cyfr
-/// występuje w podanej liczbie
-/// 
-/// Przykład:
-/// Wyniki dla liczby: 4566
-/// 0 => 0
-/// 1 => 0
-/// 2 => 0
-/// 3 => 0
-/// 4 => 1
-/// 5 => 1
-/// 6 => 2
-/// 7 => 0
-/// 8 => 0
-/// 9 => 0
-int number = 33111975;
-string numberAsString = number.ToString();
-char[] chars = numberAsString.ToArray();
-int[] result = new int[10];
+﻿using ChallengeApp;
 
-Console.WriteLine("Poniżej wynik dla liczby " + number);
+Employee employee1 = new Employee("Marek", "Nowak", 42);
+Employee employee2 = new Employee("Jan", "Moskal", 30);
+Employee employee3 = new Employee("Mariusz", "Dziwny", 51);
 
-for (int i=0; i<10; i++)
+
+employee1.AddScore(9);
+employee1.AddScore(9);
+employee1.AddScore(9);
+employee1.AddScore(9);
+employee1.AddScore(9);
+
+employee2.AddScore(9);
+employee2.AddScore(9);
+employee2.AddScore(9);
+employee2.AddScore(9);
+employee2.AddScore(7);
+
+employee3.AddScore(7);
+employee3.AddScore(8);
+employee3.AddScore(6);
+employee3.AddScore(8);
+employee3.AddScore(9);
+
+List<Employee> employees = new List<Employee>()
 {
-    result[i] = 0;
+    employee1, employee2, employee3
+};
 
-    foreach (char oneDigit in chars)
+int maxResult = -1;
+Employee employeeWithMaxResult = null;
+
+foreach (var employee in employees)
+{
+    if (employee.Result > maxResult)
     {
-        if (oneDigit == '0')
-        {
-            result[0]++;
-        }
-        else if (oneDigit == '1')
-        {
-            result[1]++;
-        }
-        else if (oneDigit == '2')
-        {
-            result[2]++;
-        }
-        else if (oneDigit == '3')
-        {
-            result[3]++;
-        }
-        else if (oneDigit == '4')
-        {
-            result[4]++;
-        }
-        else if (oneDigit == '5')
-        {
-            result[5]++;
-        }
-        else if (oneDigit == '6')
-        {
-            result[6]++;
-        }
-        else if (oneDigit == '7')
-        {
-            result[7]++;
-        }
-        else if (oneDigit == '8')
-        {
-            result[8]++;
-        }
-        else if (oneDigit == '9')
-        {
-            result[9]++;
-        }
+        employeeWithMaxResult = employee;
+        maxResult = employee.Result;
     }
-    Console.WriteLine(i + " => " + result[i]);
 }
+
+Console.WriteLine("Najlepszy wynik osiągnął " + employeeWithMaxResult.Name + " " + employeeWithMaxResult.Surname + " lat " +
+    employeeWithMaxResult.Age + ", a jego wynik to " + maxResult);
